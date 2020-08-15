@@ -82,7 +82,7 @@ app.post("/createUser", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({
-        error: "could not create user" + req.body.email + req.body.password,
+        error: "could not create user",
       });
       console.error(err);
     });
