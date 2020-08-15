@@ -4,7 +4,7 @@ import { BookListingForm } from "./forms/BookListingForm";
 import { Note } from "./components/Note";
 import { mockNote } from "./mockData.js";
 import { UserInfo } from "./forms/UserInfo";
-import UserProvider from './providers/UserProvider';
+import UserProvider from "./providers/UserProvider";
 import axios from "axios";
 
 class App extends Component {
