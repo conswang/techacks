@@ -1,9 +1,14 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import { NoteListingForm } from './forms/NoteListingForm';
+import { BookListingForm } from './forms/BookListingForm';
 
 function App() {
   return (
-    <Button>Hello world</Button>
+    <>
+      <NoteListingForm></NoteListingForm>
+      <BookListingForm></BookListingForm>
+    </>
   );
 }
 
