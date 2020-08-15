@@ -27,8 +27,8 @@ export function Note(props) {
         <Card.Body>
           <Card.Title className='note-title'>{props.note.title}</Card.Title>
           <Card.Text>
-            <p className='note-ask'>Ask: {askText}</p>
-            <p>{props.note.description}</p>
+            <div className='note-ask'>Ask: {askText}</div>
+            <div className='note-paragraph'>{props.note.description}</div>
             <div className='note-actions'>
               {
                 props.note.ask
