@@ -13,7 +13,6 @@ app.get("/get5Notes", (req, res) => {
     .firestore()
     .collection("notes")
     .limit(5)
-    .orderBy("created", "desc")
     .get()
     .then((data) => {
       let users: any = [];
