@@ -69,10 +69,16 @@ app.post('/createUser', (req, res) => {
     .collection("users")
     .add(req.user)
     .then((doc) =>
+      admin
+      .auth()
+      .createUser({
+        email: req.user.email,
+        password: req.user.password,
+      });
       res.json({ message: `document ${doc.id} created successfully` })
     )
     .catch((err) => {
-      res.status(500).json({ error: "could not create notes" });
+      res.status(500).json({ error: "could not create user" });
       console.error(err);
     });
 })
