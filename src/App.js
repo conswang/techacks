@@ -1,8 +1,5 @@
 import React, { Component, useState } from "react";
-import { NoteListingForm } from "./forms/NoteListingForm";
-import { BookListingForm } from "./forms/BookListingForm";
 import { Note } from "./components/Note";
-import { mockNote } from "./mockData.js";
 import UserProvider from './providers/UserProvider';
 import axios from "axios";
 import { Home } from './pages/Home';
@@ -43,20 +40,6 @@ class App extends Component {
       <UserProvider>
         <Router>
           <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/listings">Listings</Link>
-                </li>
-                <li>
-                  <Link to="/profiles">Profiles</Link>
-                </li>
-              </ul>
-            </nav>
-
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
