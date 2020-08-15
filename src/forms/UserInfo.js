@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import './UserInfo.scss'
 import { auth } from '../firebase'
 import { serverURI } from '../constants'
+import Axios from 'axios';
 
 export function UserInfo() {
     const [name, setName] = React.useState('')
@@ -23,13 +24,14 @@ export function UserInfo() {
     }
 
     const createAccount = () => {
-        try {
-            auth.createUserWithEmailAndPassword(email, password)
-                .then()
-        }
-        catch(err) {
-            console.log(err);
-        }
+        Axios.post(`${serverURI}/createUser`, {
+            user: {
+                name: name,
+                username: username,
+                email: email,
+                password: password
+            }
+        })
     }
 
     return (
@@ -41,22 +43,22 @@ export function UserInfo() {
                             <h3 className="message">Create an account</h3>
                             <Form.Group controlId="formName" class="">
                                 <Form.Label>Full Name</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Full Name" />
+                                <Form.Control type="text" placeholder="Enter Full Name" onClick={e => setName(e.target.value)}/>
                             </Form.Group>
 
                             <Form.Group controlId="formUserName" class="">
                                 <Form.Label>Username</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Username" />
+                                <Form.Control type="text" placeholder="Enter Username" onClick={e => setUsername(e.target.value)}/>
                             </Form.Group>
 
                             <Form.Group controlId="formEmail">
                                 <Form.Label >Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control type="email" placeholder="Enter email" onClick={e => setEmail(e.target.value)}/>
                             </Form.Group>
 
                             <Form.Group controlId="formPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control type="password" placeholder="Password" onClick={e => setPassword(e.target.value)}/>
                             </Form.Group>
                             <Button variant="primary" type="submit" className="proceed" onClick={createAccount}>
                                 Sign Up

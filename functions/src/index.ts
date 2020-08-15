@@ -30,7 +30,7 @@ app.post("/findNotes", (req, res) => {
   admin
     .firestore()
     .collection("notes")
-    .where("subject", "==", req.body.subjet)
+    .where("subject", "==", req.body.subject)
     .limit(5)
     .get()
     .then((data) => {
@@ -63,25 +63,38 @@ app.get("/getAllUsers", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+
 app.post('/createUser', (req, res) => {
-  admin
+  admin.auth().createUserWithEmailAndPassword(req.body.user.email, req.body.user.password)
+  .then(
+    admin
     .firestore()
-    .collection("users")
-    .add(req.user)
-    .then((doc) =>
-      admin
-      .auth()
-      .createUser({
-        email: req.user.email,
-        password: req.user.password,
-      });
+    .collect('users')
+    .add(req.body.user)
+    .then(doc =>
       res.json({ message: `document ${doc.id} created successfully` })
     )
-    .catch((err) => {
-      res.status(500).json({ error: "could not create user" });
-      console.error(err);
-    });
+  ).catch(err => {
+    res.status(500).json({ error: "could not create user" });
+    console.error(err)
+  })
 })
+
+app.post('/login', (req, res) => {
+  admin.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
+  .then(
+    admin
+    .firestore()
+    .collect('users')
+    .where("email", "==", req.body.user.email)
+    .get(req.body.user)
+  )
+  .catch(err => {
+    res.status(500).json({ error: 'could not login user' })
+    console.log(err)
+  })
+})
+
 app.post("/createNotes", (req, res) => {
   const newNotes = {
     title: req.body.title,
