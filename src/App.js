@@ -1,10 +1,12 @@
 import React, { Component, useState } from "react";
 import { Note } from "./components/Note";
-import UserProvider from './providers/UserProvider';
+import { mockNote } from "./mockData.js";
+import { UserInfo } from "./forms/UserInfo";
+import UserProvider from "./providers/UserProvider";
 import axios from "axios";
-import { Home } from './pages/Home';
-import { Listings } from './pages/Listings';
-import { Profiles } from './pages/Profiles';
+import { Home } from "./pages/Home";
+import { Listings } from "./pages/Listings";
+import { Profiles } from "./pages/Profiles";
 
 import {
   BrowserRouter as Router,
@@ -13,8 +15,7 @@ import {
   Link,
   // useRouteMatch,
   // useParams
-} from 'react-router-dom';
-
+} from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -34,8 +35,8 @@ class App extends Component {
     let notesloaded = this.state.notes ? (
       this.state.notes.map((notes) => <Note note={notes} />)
     ) : (
-        <p>Getting Notes... </p>
-      );
+      <p>Getting Notes... </p>
+    );
     return (
       <UserProvider>
         <Router>
@@ -56,7 +57,6 @@ class App extends Component {
           </div>
         </Router>
       </UserProvider>
-
     );
   }
 }

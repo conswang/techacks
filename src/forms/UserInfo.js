@@ -17,8 +17,10 @@ export function UserInfo() {
 
     const login = () => {
         auth.signInWithEmailAndPassword(email, password)
-            .then(
+            .then(res => {
+                auth.signInWithEmailAndPassword(email, password)
                 console.log('TODO: redirect to home page')
+                }
             )
             .catch(err => console.log(err))
     }
