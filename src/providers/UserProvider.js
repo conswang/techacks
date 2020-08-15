@@ -5,7 +5,9 @@ export const UserContext = createContext({ user: null });
 
 class UserProvider extends Component {
   state = {
-    user: null
+    userName: null,
+    name: null,
+    email: null,
   };
 
   componentDidMount = () => {
