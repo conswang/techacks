@@ -1,13 +1,14 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import { NoteListingForm } from './forms/NoteListingForm';
 import { BookListingForm } from './forms/BookListingForm';
+import { UserInfo } from './forms/UserInfo';
 
 function App() {
   return (
     <>
       <NoteListingForm></NoteListingForm>
       <BookListingForm></BookListingForm>
+      <UserInfo></UserInfo>
     </>
   );
 }
