@@ -51,7 +51,7 @@ export function UserInfo() {
                                 <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
                             <Button variant="primary" type="submit" className="proceed">
-                                Login
+                                Log In
                             </Button>
                         </Form>
                     </Tab>
