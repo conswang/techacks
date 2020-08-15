@@ -64,38 +64,42 @@ app.get("/getAllUsers", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.post('/createUser', (req, res) => {
-  admin.auth().createUser(
-    email: req.body.user.email,
-    password: req.body.user.password
-  ).then(
-    admin
-    .firestore()
-    .collect('users')
-    .add(req.body.user)
-    .then(doc =>
-      res.json({ message: `document ${doc.id} created successfully` })
-    )
-  ).catch(err => {
-    res.status(500).json({ error: "could not create user" });
-    console.error(err)
-  })
-})
-
-app.post('/getUser', (req, res) => {
+app.post("/createUser", (req, res) => {
   admin
-  .firestore()
-  .collect('users')
-  .where("email", "==", req.body.user.email)
-  .get()
-  .then(doc =>
-    res.json(doc)
-  )
-  .catch(err => {
-    res.status(500).json({ error: 'could not get user' })
-    console.log(err)
-  })
-})
+    .auth()
+    .createUser({
+      email: req.body.email,
+      password: req.body.password,
+    })
+    .then(() => {
+      return admin
+        .firestore()
+        .collection("users")
+        .add(req.body)
+        .then((doc) =>
+          res.json({ message: `document ${doc.id} created successfully` })
+        );
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: "could not create user" + req.body.email + req.body.password,
+      });
+      console.error(err);
+    });
+});
+
+app.post("/getUser", (req, res) => {
+  admin
+    .firestore()
+    .collection("users")
+    .where("email", "==", req.body.email)
+    .get()
+    .then((doc) => res.json(doc))
+    .catch((err) => {
+      res.status(500).json({ error: "could not get user" });
+      console.log(err);
+    });
+});
 
 app.post("/createNotes", (req, res) => {
   const newNotes = {
