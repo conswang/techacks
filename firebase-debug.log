@@ -5,19 +5,19 @@
 [debug] [2020-08-15T03:53:35.990Z] Node Version:  v12.18.3
 [debug] [2020-08-15T03:53:35.992Z] Time:          Fri Aug 14 2020 22:53:35 GMT-0500 (Central Daylight Time)
 [debug] [2020-08-15T03:53:35.992Z] ----------------------------------------------------------------------
-[debug] [2020-08-15T03:53:35.992Z] 
+[debug] [2020-08-15T03:53:35.992Z]
 [debug] [2020-08-15T03:53:36.002Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
 [debug] [2020-08-15T03:53:36.003Z] > authorizing via signed-in user
 [debug] [2020-08-15T03:53:36.003Z] [iam] checking project colab-techacks for permissions ["firebase.projects.get"]
-[debug] [2020-08-15T03:53:36.007Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/colab-techacks:testIamPermissions  
+[debug] [2020-08-15T03:53:36.007Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/colab-techacks:testIamPermissions
  {"permissions":["firebase.projects.get"]}
 [debug] [2020-08-15T03:53:36.177Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 15 Aug 2020 03:53:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=55","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2020-08-15T03:53:36.178Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/colab-techacks  
+[debug] [2020-08-15T03:53:36.178Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/colab-techacks
  
 [debug] [2020-08-15T03:53:36.414Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 15 Aug 2020 03:53:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[info] 
+[info]
 [info] === Serving from 'C:\Users\jtayl\Documents\GitHub\techacks'...
-[info] 
+[info]
 [warn] !  Your requested "node" version "10" doesn't match your global version "12" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"10\" doesn't match your global version \"12\""}}
 [info] i  functions: Watching "C:\Users\jtayl\Documents\GitHub\techacks\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\jtayl\\Documents\\GitHub\\techacks\\functions\" for Cloud Functions..."}}
 [debug] [2020-08-15T03:53:38.447Z] [worker-pool] addWorker(~diagnostic~) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(~diagnostic~)"}}
@@ -212,7 +212,7 @@
 [info] >  C:\Users\jtayl\AppData\Roaming\nvm\v12.18.3\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:642 {"user":"C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642\r"}}
 [info] >                  throw new Error("Function timed out."); {"user":"                throw new Error(\"Function timed out.\");\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m                 throw new Error(\"Function timed out.\");\r"}}
 [info] >                  ^ {"user":"                ^\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m                 ^\r"}}
-[info] >   {"user":"\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m \r"}}
+[info] > {"user":"\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m \r"}}
 [info] >  Error: Function timed out. {"user":"Error: Function timed out.\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m Error: Function timed out.\r"}}
 [info] >      at Timeout._onTimeout (C:\Users\jtayl\AppData\Roaming\nvm\v12.18.3\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:642:23) {"user":"    at Timeout._onTimeout (C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642:23)\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m     at Timeout._onTimeout (C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642:23)\r"}}
 [info] >      at listOnTimeout (internal/timers.js:549:17) {"user":"    at listOnTimeout (internal/timers.js:549:17)\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m     at listOnTimeout (internal/timers.js:549:17)\r"}}
@@ -283,7 +283,7 @@
 [info] >  C:\Users\jtayl\AppData\Roaming\nvm\v12.18.3\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:642 {"user":"C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642\r"}}
 [info] >                  throw new Error("Function timed out."); {"user":"                throw new Error(\"Function timed out.\");\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m                 throw new Error(\"Function timed out.\");\r"}}
 [info] >                  ^ {"user":"                ^\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m                 ^\r"}}
-[info] >   {"user":"\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m \r"}}
+[info] > {"user":"\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m \r"}}
 [info] >  Error: Function timed out. {"user":"Error: Function timed out.\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m Error: Function timed out.\r"}}
 [info] >      at Timeout._onTimeout (C:\Users\jtayl\AppData\Roaming\nvm\v12.18.3\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:642:23) {"user":"    at Timeout._onTimeout (C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642:23)\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m     at Timeout._onTimeout (C:\\Users\\jtayl\\AppData\\Roaming\\nvm\\v12.18.3\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:642:23)\r"}}
 [info] >      at listOnTimeout (internal/timers.js:549:17) {"user":"    at listOnTimeout (internal/timers.js:549:17)\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"getUsers"},"message":"\u001b[90m> \u001b[39m     at listOnTimeout (internal/timers.js:549:17)\r"}}
