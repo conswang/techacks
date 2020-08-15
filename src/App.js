@@ -1,11 +1,22 @@
 import React, { Component, useState } from "react";
-import { NoteListingForm } from "./forms/NoteListingForm";
-import { BookListingForm } from "./forms/BookListingForm";
 import { Note } from "./components/Note";
 import { mockNote } from "./mockData.js";
 import { UserInfo } from "./forms/UserInfo";
 import UserProvider from "./providers/UserProvider";
 import axios from "axios";
+import { Home } from './pages/Home';
+import { Listings } from './pages/Listings';
+import { Profiles } from './pages/Profiles';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  // useRouteMatch,
+  // useParams
+} from 'react-router-dom';
+
 
 class App extends Component {
   state = {
@@ -25,16 +36,29 @@ class App extends Component {
     let notesloaded = this.state.notes ? (
       this.state.notes.map((notes) => <Note note={notes} />)
     ) : (
-      <p>Getting Notes... </p>
-    );
+        <p>Getting Notes... </p>
+      );
     return (
       <UserProvider>
-        <NoteListingForm></NoteListingForm>
-        <BookListingForm></BookListingForm>
-        <UserInfo></UserInfo>
-        <Note note={mockNote}></Note>
-        {notesloaded}
+        <Router>
+          <div>
+            {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+            <Switch>
+              <Route path="/listings">
+                <Listings />
+              </Route>
+              <Route path="/profiles">
+                <Profiles />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </UserProvider>
+
     );
   }
 }
