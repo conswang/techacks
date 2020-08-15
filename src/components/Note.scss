@@ -1,0 +1,24 @@
+@import '../_styles.scss';
+
+.note {
+  max-width: 300px;
+}
+
+.note-image {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.note-title {
+  color: $green;
+}
+
+.note-ask {
+  font-weight: bold;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
