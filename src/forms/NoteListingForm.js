@@ -1,7 +1,8 @@
 import React from 'react';
 import { Form, Col, Row } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
-// import { api } from 'functions/src/index.ts';
+import Axios from 'axios';
+import { serverURI } from '../constants'
 
 export function NoteListingForm() {
   const [title, setTitle] = React.useState('');
@@ -12,7 +13,22 @@ export function NoteListingForm() {
   const [price, setPrice] = React.useState();
 
   const onSubmit = () => {
-    
+    Axios.post(`${serverURI}/createNotes`, {
+      title: title,
+      subject: subject,
+      course: course,
+      description: description,
+      ask: ask,
+      price: price,
+      pageNum: 100,
+    })
+    .then(() => console.log('success'))
+    .catch((err) => console.log(err))
+  }
+
+  const validateCurrency = (amount) => {
+    const regex = /^[1-9]\d*(?:\.\d{0,2})?$/;
+    return regex.test(amount);
   }
 
   return(
@@ -44,7 +60,7 @@ export function NoteListingForm() {
           <Form.Control onChange={e => setAsk(e.target.value)}></Form.Control>
         </Form.Group>
         <Form.Group as={Col}>
-          <Form.Label>Price</Form.Label>
+          <Form.Label>Price (USD)</Form.Label>
           <Form.Control onChange={e => setPrice(e.target.value)}></Form.Control>
         </Form.Group>
       </Row>
