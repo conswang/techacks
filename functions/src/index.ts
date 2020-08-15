@@ -65,8 +65,10 @@ app.get("/getAllUsers", (req, res) => {
 });
 
 app.post('/createUser', (req, res) => {
-  admin.auth().createUserWithEmailAndPassword(req.body.user.email, req.body.user.password)
-  .then(
+  admin.auth().createUser(
+    email: req.body.user.email,
+    password: req.body.user.password
+  ).then(
     admin
     .firestore()
     .collect('users')
@@ -80,17 +82,17 @@ app.post('/createUser', (req, res) => {
   })
 })
 
-app.post('/login', (req, res) => {
-  admin.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
-  .then(
-    admin
-    .firestore()
-    .collect('users')
-    .where("email", "==", req.body.user.email)
-    .get(req.body.user)
+app.post('/getUser', (req, res) => {
+  admin
+  .firestore()
+  .collect('users')
+  .where("email", "==", req.body.user.email)
+  .get()
+  .then(doc =>
+    res.json(doc)
   )
   .catch(err => {
-    res.status(500).json({ error: 'could not login user' })
+    res.status(500).json({ error: 'could not get user' })
     console.log(err)
   })
 })
