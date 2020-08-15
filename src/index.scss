@@ -1,0 +1,8 @@
+@import "_styles.scss";
+
+// Bootstrap variable overrides
+$body-bg: $background;
+$body-color: $text;
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
