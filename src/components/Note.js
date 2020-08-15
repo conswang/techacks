@@ -10,7 +10,7 @@ export function Note(props) {
   const ask = props.note.ask;
   const price = props.note.price;
   let askText = `${ask || ''}${ask && price ? ' or ' : ''}${price + ' USD' || ''}`;
-  return(
+  return (
     <>
       {/* Enlarged image preview */}
       <Modal show={showPreview} size='lg' onHide={() => setShowPreview(false)}>
@@ -32,13 +32,13 @@ export function Note(props) {
             <div className='note-actions'>
               {
                 props.note.ask
-                ?<Button>Exchange</Button>
-                : undefined
+                  ? <Button>Exchange</Button>
+                  : undefined
               }
               {
                 props.note.price
-                ?<Button>Purchase</Button>
-                : undefined
+                  ? <Button>Purchase</Button>
+                  : undefined
               }
             </div>
           </Card.Text>
