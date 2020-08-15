@@ -4,9 +4,17 @@
   max-width: 300px;
 }
 
+.note-image-preview {
+  max-width: 100%;
+  height: auto;
+}
+
 .note-image {
   max-height: 400px;
   object-fit: cover;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .note-title {
