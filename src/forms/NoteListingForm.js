@@ -25,8 +25,8 @@ export function NoteListingForm() {
       price: price,
       pageNum: 100,
     })
-    .then(() => console.log('success'))
-    .catch((err) => console.log(err))
+      .then(() => console.log('success'))
+      .catch((err) => console.log(err))
   }
 
   const validateCurrency = (amount) => {
@@ -40,17 +40,17 @@ export function NoteListingForm() {
       <Form>
         <Form.Group controlId="formTitle">
           <Form.Label>Title</Form.Label>
-          <Form.Control type="text" placeholder="Enter Note Title"  onChange={e => setTitle(e.target.value)}/>
+          <Form.Control type="text" placeholder="Enter Note Title" onChange={e => setTitle(e.target.value)} />
         </Form.Group>
 
         <Form.Row>
           <Form.Group as={Col} controlId="formSubject">
             <Form.Label>Subject</Form.Label>
-            <Form.Control type="text" placeholder="Enter Subject"  onChange={e => setSubject(e.target.value)} />
+            <Form.Control type="text" placeholder="Enter Subject" onChange={e => setSubject(e.target.value)} />
           </Form.Group>
           <Form.Group as={Col} controlId="formCourse">
             <Form.Label>Course</Form.Label>
-            <Form.Control type="text" placeholder="Enter Course"  onChange={e => setCourse(e.target.value)}/>
+            <Form.Control type="text" placeholder="Enter Course" onChange={e => setCourse(e.target.value)} />
           </Form.Group>
         </Form.Row>
 
@@ -62,11 +62,11 @@ export function NoteListingForm() {
         <Form.Row>
           <Form.Group as={Col} controlId="formAsk">
             <Form.Label>Ask</Form.Label>
-            <Form.Control type="text" placeholder="Enter Subject Note" onChange={e => setAsk(e.target.value)}/>
+            <Form.Control type="text" placeholder="Enter Subject Note" onChange={e => setAsk(e.target.value)} />
           </Form.Group>
           <Form.Group as={Col} controlId="formPrice">
             <Form.Label>Price</Form.Label>
-            <Form.Control type="text" placeholder="Enter Price (USD)" onChange={e => setPrice(e.target.value)}/>
+            <Form.Control type="text" placeholder="Enter Price (USD)" onChange={e => setPrice(e.target.value)} />
           </Form.Group>
         </Form.Row>
 
@@ -77,6 +77,5 @@ export function NoteListingForm() {
         <Button onClick={onSubmit}>Submit</Button>
       </Form>
     </Card>
-
   )
 }

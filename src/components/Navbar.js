@@ -8,7 +8,7 @@ import avatar from '../assets/avatar.png';
 export function Navigation() {
     return (
         <>
-            <Navbar expand="lg" >
+            <Navbar sticky="top" expand="lg" >
                 <Navbar.Brand href="/" className="mr-auto">
                     <img
                         alt=""

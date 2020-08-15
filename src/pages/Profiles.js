@@ -1,12 +1,14 @@
 import React from "react";
 import { Navigation } from "../components/Navbar";
+import { Sidebar } from "../components/Sidebar";
 
 export function Profiles() {
 
     return (
         <>
             <Navigation />
-            <h1>Nyello</h1>
+            <Sidebar />
+
         </>
     )
 
