@@ -9,7 +9,7 @@ export function Note(props) {
 
   const ask = props.note.ask;
   const price = props.note.price;
-  let askText = `${ask || ''}${ask && price ? ' or ' : ''}${price + ' USD' || ''}`;
+  let askText = `${ask || ''}${ask && price ? ' or ' : ''}${price ? price + ' USD' : ''}`;
   return (
     <>
       {/* Enlarged image preview */}
