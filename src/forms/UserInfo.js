@@ -5,8 +5,33 @@ import { Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './UserInfo.scss'
+import { auth } from '../firebase'
+import { serverURI } from '../constants'
 
 export function UserInfo() {
+    const [name, setName] = React.useState('')
+    const [username, setUsername] = React.useState('')
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+
+    const login = () => {
+        auth.signInWithEmailAndPassword(email, password)
+            .then(
+                console.log('TODO: redirect to home page')
+            )
+            .catch(err => console.log(err))
+    }
+
+    const createAccount = () => {
+        try {
+            auth.createUserWithEmailAndPassword(email, password)
+                .then()
+        }
+        catch(err) {
+            console.log(err);
+        }
+    }
+
     return (
         <Card className="userForm">
             <Card.Body>
@@ -33,7 +58,7 @@ export function UserInfo() {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
-                            <Button variant="primary" type="submit" className="proceed">
+                            <Button variant="primary" type="submit" className="proceed" onClick={createAccount}>
                                 Sign Up
                             </Button>
                         </Form>
@@ -50,7 +75,7 @@ export function UserInfo() {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
-                            <Button variant="primary" type="submit" className="proceed">
+                            <Button variant="primary" type="submit" className="proceed" onClick={login}>
                                 Login
                             </Button>
                         </Form>
