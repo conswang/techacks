@@ -63,6 +63,19 @@ app.get("/getAllUsers", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+app.post('/createUser', (req, res) => {
+  admin
+    .firestore()
+    .collection("users")
+    .add(req.user)
+    .then((doc) =>
+      res.json({ message: `document ${doc.id} created successfully` })
+    )
+    .catch((err) => {
+      res.status(500).json({ error: "could not create notes" });
+      console.error(err);
+    });
+})
 app.post("/createNotes", (req, res) => {
   const newNotes = {
     title: req.body.title,

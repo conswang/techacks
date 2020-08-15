@@ -1,19 +1,17 @@
 import React, { Component, createContext } from "react";
-import { auth } from "firebase";
+import { auth } from "../firebase";
 
 export const UserContext = createContext({ user: null });
 
 class UserProvider extends Component {
   state = {
-    userName: null,
-    name: null,
-    email: null,
+    user: null,
   };
 
   componentDidMount = () => {
-    // auth.onAuthStateChanged(userAuth => {
-    //   this.setState({ user: userAuth});
-    // });
+    auth.onAuthStateChanged(userAuth => {
+      this.setState({ user: userAuth });
+    });
   };
 
   render() {
