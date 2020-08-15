@@ -1,6 +1,19 @@
 @import '../_styles.scss';
 
-.userForm {
-    width: 19rem;
+.content {
+    display: flex;
+    justify-content: center;
+    color: $green;
+    
 }
 
+.userForm {
+    width: 30rem;
+    padding: 2em;
+    margin: auto;
+}
+
+.message {
+    color: $teal;
+    margin-top: 0.7em;
+}
