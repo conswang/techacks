@@ -3,6 +3,7 @@ import { UserInfo } from "../forms/UserInfo.js";
 import { LandingPage } from "../components/Landing";
 import { Navigation } from "../components/Navbar";
 
+
 export function Home() {
 
     return (
@@ -10,8 +11,9 @@ export function Home() {
 
             <LandingPage />
             <Navigation />
-            <UserInfo />
-
+            <div id="sectionTwo">
+                <UserInfo />
+            </div>
         </>
     )
 

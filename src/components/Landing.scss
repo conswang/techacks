@@ -1,6 +1,15 @@
 @import '../_styles.scss';
 
+.nav-item > .active:hover {
+    opacity: 0.5;
+}
+
 .landing {
     height: 100vh;
     padding: 3em;
+}
+
+.landingTitle {
+    font-family: $title-font;
+    font-size: 8vw;
 }
