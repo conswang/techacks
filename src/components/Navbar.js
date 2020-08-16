@@ -4,17 +4,20 @@ import Nav from 'react-bootstrap/Nav';
 import logo from '../assets/colab.png';
 import listing from '../assets/book.png';
 import avatar from '../assets/avatar.png';
+import "./Navbar.scss"
+
 
 export function Navigation() {
     return (
         <>
-            <Navbar sticky="top" expand="lg" >
-                <Navbar.Brand href="/" className="mr-auto">
+            <Navbar sticky="top" className="nbar">
+                <Navbar.Brand href="/" className="mr-auto nbTitle">
                     <img
                         alt=""
                         src={logo}
-                        width="60"
-                        height="60"
+                        width="40"
+                        height="40"
+
                     />{' '}
                     CoLab
                 </Navbar.Brand>
@@ -24,8 +27,8 @@ export function Navigation() {
                             <img
                                 alt=""
                                 src={listing}
-                                width="40"
-                                height="40"
+                                width="30"
+                                height="30"
                             />{' '}Listings</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
@@ -33,8 +36,8 @@ export function Navigation() {
                             <img
                                 alt=""
                                 src={avatar}
-                                width="40"
-                                height="40"
+                                width="30"
+                                height="30"
                             />{' '}Profiles</Nav.Link>
                     </Nav.Item>
                 </Nav>

@@ -35,7 +35,7 @@ export function NoteListingForm() {
   }
 
   return (
-    <Card className='noteListing'>
+    <Card className='noteListing border-0 mb-5'>
       <Card.Title>Upload Note</Card.Title>
       <Form>
         <Form.Group controlId="formTitle">

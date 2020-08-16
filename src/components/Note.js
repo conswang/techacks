@@ -22,7 +22,7 @@ export function Note(props) {
         </Modal.Body>
       </Modal>
 
-      <Card className='note'>
+      <Card className='note m-3 shadow'>
         <Card.Img className='note-image' src={props.note.image} onClick={() => setShowPreview(true)}></Card.Img>
         <Card.Body>
           <Card.Title className='note-title'>{props.note.title}</Card.Title>
