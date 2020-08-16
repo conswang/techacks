@@ -102,6 +102,7 @@ app.post("/getUser", (req, res) => {
     });
 });
 app.post("/uploadNotesImage", (req, res) => {
+  // from https://github.com/hidjou/classsed-react-firebase-functions/blob/master/functions/handlers/users.js
   const busBoy = require("busboy");
   const path = require("path");
   const os = require("os");
