@@ -1,7 +1,9 @@
 import React from "react";
+import { Row, Col } from 'react-bootstrap';
 import { UserInfo } from "../forms/UserInfo.js";
 import { LandingPage } from "../components/Landing";
 import { Navigation } from "../components/Navbar";
+import { AboutSec } from "../components/AboutSec"
 
 
 export function Home() {
@@ -12,8 +14,9 @@ export function Home() {
             <LandingPage />
             <Navigation />
             <div id="sectionTwo">
-                <UserInfo />
+                <AboutSec />
             </div>
+            <UserInfo />
         </>
     )
 
