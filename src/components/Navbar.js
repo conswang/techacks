@@ -4,17 +4,20 @@ import Nav from 'react-bootstrap/Nav';
 import logo from '../assets/colab.png';
 import listing from '../assets/book.png';
 import avatar from '../assets/avatar.png';
+import "./Navbar.scss"
+
 
 export function Navigation() {
     return (
         <>
-            <Navbar sticky="top" expand="lg" >
-                <Navbar.Brand href="/" className="mr-auto">
+            <Navbar sticky="top" expand="lg" className="nbar">
+                <Navbar.Brand href="/" className="mr-auto nbTitle">
                     <img
                         alt=""
                         src={logo}
                         width="60"
                         height="60"
+
                     />{' '}
                     CoLab
                 </Navbar.Brand>

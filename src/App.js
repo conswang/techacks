@@ -12,9 +12,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  // useRouteMatch,
-  // useParams
 } from "react-router-dom";
 
 class App extends Component {
@@ -35,8 +32,8 @@ class App extends Component {
     let notesloaded = this.state.notes ? (
       this.state.notes.map((notes) => <Note note={notes} />)
     ) : (
-      <p>Getting Notes... </p>
-    );
+        <p>Getting Notes... </p>
+      );
     return (
       <UserProvider>
         <Router>
