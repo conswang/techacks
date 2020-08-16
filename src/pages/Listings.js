@@ -17,7 +17,7 @@ export function Listings() {
             <Note note={mockNote} />
             <Note note={mockNote} />
             <Note note={mockNote} />
-            <h1 className="display-4 text-center">Help a fellow student today!</h1>
+            <h1 className="display-4 text-center mt-5">Help a fellow student today!</h1>
             <NoteListingForm />
         </React.Fragment>
     )
